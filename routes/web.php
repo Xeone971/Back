@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/gestionMdp', function () {
+    return view('gestionMdp');
+});
+
+
+ Route::post('/ControllerForm', [ControllerForm::class, 'checKForm'])->name(('checKForm'));
